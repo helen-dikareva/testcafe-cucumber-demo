@@ -1,0 +1,11 @@
+{
+  "name": "testcafe-cucumber",
+  "version": "0.0.1",
+  "description": "An example integration of TestCafe into CucumberJS",
+  "main": "index.js",
+  "author": "helen-dikareva",
+  "dependencies": {
+    "cucumber": "2.0.0-rc.9",
+    "testcafe": "^0.14.0"
+  }
+}
