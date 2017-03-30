@@ -6,7 +6,7 @@ This is a demonstration of integration [TestCafe](https://github.com/DevExpress/
 * TestCafe
 * CucumberJS
 
-To install it, use the `npm install testcafe` command.
+To install it, use the `npm install` command.
 
 ## Running tests
 
