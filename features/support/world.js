@@ -2,7 +2,7 @@ var { defineSupportCode } = require('cucumber');
 const testControllerHolder = require('./testControllerHolder');
 
 function CustomWorld () {
-    this.getTestController = testControllerHolder.get;
+    this.waitForTestController = testControllerHolder.get;
 }
 
 defineSupportCode(function ({ setWorldConstructor }) {

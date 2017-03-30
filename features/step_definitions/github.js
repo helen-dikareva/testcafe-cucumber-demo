@@ -6,7 +6,7 @@ defineSupportCode(function ({ Given, When, Then }) {
     var testController = null;
 
     Given('I am open GitHub page', function () {
-        return this.getTestController()
+        return this.waitForTestController()
             .then(function (tc) {
                 testController = tc;
 

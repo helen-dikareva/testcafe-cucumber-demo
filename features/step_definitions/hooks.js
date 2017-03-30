@@ -8,7 +8,6 @@ var DELAY    = 5000;
 
 function createTestFile () {
     fs.writeFileSync('test.js',
-        'import {Role} from "testcafe"\n;' +
         'import testControllerHolder from "./features/support/testControllerHolder.js";\n\n' +
 
         'fixture("fixture")\n' +
