@@ -24,7 +24,7 @@ defineSupportCode(function ({ Given, When, Then }) {
     });
 
     Then('I should see that the first Google\'s result is {stringInDoubleQuotes}', function (text) {
-        var firstLink = Selector('#rso > div:nth-child(1) > div > div > div > h3 > a').with({ boundTestRun: testController });
+        var firstLink = Selector('#rso').find('a').with({ boundTestRun: testController });
 
         return testController.expect(firstLink.innerText).contains(text);
     });

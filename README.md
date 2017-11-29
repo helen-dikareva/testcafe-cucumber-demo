@@ -10,6 +10,6 @@ To install it, use the `npm install` command.
 
 ## Running tests
 
-You can run the test by executing command `.\node_modules\.bin\cucumber-js.cmd`
+You can run tests by executing the `.\node_modules\.bin\cucumber-js.cmd` or `npm test` commands in command prompt
 
 ![Test run report](./images/test-run.png)
