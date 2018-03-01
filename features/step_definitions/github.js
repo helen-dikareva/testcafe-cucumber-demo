@@ -25,7 +25,7 @@ defineSupportCode(function ({ Given, When, Then }) {
     });
 
     Then('I should see that the first GitHub\'s result is {stringInDoubleQuotes}', function (text) {
-        var firstLink = Selector('#js-pjax-container > div.container > div > div.column.three-fourths.codesearch-results.pr-6 > ul > div:nth-child(1) > div.col-8.pr-3 > h3 > a').with({ boundTestRun: testController });
+        var firstLink = Selector('#js-pjax-container > div.container > div > div.column.three-fourths.codesearch-results > div.pl-2 > ul > div:nth-child(1) > div.col-8.pr-3 > h3 > a').with({ boundTestRun: testController });
 
         return testController.expect(firstLink.innerText).contains(text);
     });

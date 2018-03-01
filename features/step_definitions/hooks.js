@@ -25,7 +25,7 @@ function runTest () {
 
             return runner
                 .src('./test.js')
-                .browsers('chrome')
+                .browsers('chrome -incognito')
                 .run()
                 .catch(function (error) {
                     console.log(error);
