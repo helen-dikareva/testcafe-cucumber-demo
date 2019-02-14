@@ -1,4 +1,4 @@
-var { defineSupportCode } = require('cucumber');
+var { BeforeAll, AfterAll } = require('cucumber');
 const fs                   = require('fs');
 const createTestCafe       = require('testcafe');
 const testControllerHolder = require('../support/testControllerHolder');
@@ -25,7 +25,7 @@ function runTest () {
 
             return runner
                 .src('./test.js')
-                .browsers('chrome')
+                .browsers('chrome -incognito')
                 .run()
                 .catch(function (error) {
                     console.log(error);
@@ -36,17 +36,16 @@ function runTest () {
         });
 }
 
-defineSupportCode(function ({ registerHandler }) {
-    registerHandler('BeforeFeatures', function (features, callback) {
-        createTestFile();
-        runTest();
+BeforeAll(function (callback) {
+    createTestFile();
+    runTest();
 
-        setTimeout(callback, DELAY);
-    });
+    setTimeout(callback, DELAY);
+});
 
-    registerHandler('AfterFeatures', function (features, callback) {
-        testControllerHolder.free();
-        fs.unlinkSync('test.js');
-        setTimeout(callback, DELAY);
-    });
+AfterAll(function (callback) {
+    testControllerHolder.free();
+    fs.unlinkSync('test.js');
+
+    setTimeout(callback, DELAY);
 });

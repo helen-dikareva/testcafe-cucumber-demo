@@ -1,10 +1,8 @@
-var { defineSupportCode } = require('cucumber');
+var { setWorldConstructor } = require('cucumber');
 const testControllerHolder = require('./testControllerHolder');
 
 function CustomWorld () {
     this.waitForTestController = testControllerHolder.get;
 }
 
-defineSupportCode(function ({ setWorldConstructor }) {
-    setWorldConstructor(CustomWorld)
-});
+setWorldConstructor(CustomWorld)
